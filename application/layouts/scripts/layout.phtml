@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>ZF Mini Shop Assessment</title>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl('css/styles.css') ?>">
+    </head>
+    <body>
+        <div class="wrapper">
+            <a href="<?php echo $this->baseUrl('/') ?>"><div class="logo"></div></a>
+            <div class="global_shopping_cart"><a href="<?php echo $this->url(array('controller' => 'cart', 'action' => 'show')) ?>">Shopping Cart: <?php echo $this->cart_items_count ?> Item<?php echo $this->cart_items_count != 1 ? 's' : '' ?></a></div>
+            <?php echo $this->layout()->content ?>
+            <div class="footer">Developed by <a href="mailto:adeljas@msn.com">adeljas</a> as a part of <a href="http://www.darwinrecruitment.com/" target="_blank">Darwin Recruitment</a> employment assessments</div>
+        </div>
+    </body>
+</html>

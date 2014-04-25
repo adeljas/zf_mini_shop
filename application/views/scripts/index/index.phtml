@@ -1,0 +1,12 @@
+<?php foreach ($this->items as $item) { ?>
+    <?php $inner_page_url = $this->url(array('controller' => 'product', 'action' => 'index', 'id' => $item['id'])) ?>
+    <div class="item">
+        <a class="item_link" href="<?php echo $inner_page_url ?>"><?php echo $item['title'] ?></a>
+        <div class="item_image"><a href="<?php echo $inner_page_url ?>"><img src="<?php echo $this->baseUrl('images/products/' . $item['first_image']) ?>"/></a></div>
+        <div class="item_price">Price: <?php echo $item['price'] ?>&euro;</div>
+        <a class="item_link" href="<?php echo $inner_page_url ?>">Details</a>
+        |
+        <a class="item_link" href="<?php echo $this->url(array('controller' => 'cart', 'action' => 'add', 'item_id' => $item['id'])) ?>">Add to cart</a>
+    </div>
+<?php } ?>
+<div class="clear"></div>

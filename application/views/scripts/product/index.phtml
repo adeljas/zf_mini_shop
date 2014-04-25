@@ -1,0 +1,16 @@
+<div class="inner_title"><?php echo $this->item['title'] ?></div>
+<div class="item_price">Price: <?php echo $this->item['price'] ?>&euro;</div>
+<div class="item_description">Product Description</div>
+<div class="item_description_text"><?php echo nl2br($this->item['description']) ?></div>
+<div class="item_description">Product Images</div>
+<div class="inner_images">
+    <?php foreach ($this->item['images'] as $one) { ?>
+        <img src="<?php echo $this->baseUrl('images/products/' . $one['path']); ?>"/>
+    <?php } ?>
+</div>
+
+<div class="add_to_cart"><a href="<?php echo $this->url(array('controller' => 'cart', 'action' => 'add', 'item_id' => $this->item['id'])) ?>">Add to cart</a></div>
+
+<div class="clear"></div>
+
+<div><a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')) ?>">Back to Homepage</a></div>

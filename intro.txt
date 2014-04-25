@@ -1,0 +1,29 @@
+-----------------------------------
+	Mini Shop Website 
+-----------------------------------
+
+This is a simple implementation of a mini-shop website built using Zend Framework v1.12
+
+
+
+Features:
+
+1- Listing of products on the homepage showing the name, price and a picture of the product.
+2- Detailed page of the product showing the name, price, descrtiption and picture(s) of the product.
+3- Shopping cart with Add to cart, remove a specific item from cart, and empty cart functions.
+
+* The website uses filesystem caching for the most requested queries, that is needed to retrieve the items with their pictures.
+
+
+
+Deployment steps:
+
+- Download and install Zend Framework 1.12 and assign its path to include_path in php.ini
+- Import the database dump file "minishop.sql" to your MySQL database, note that the dump includes CREATE DATABASE and USE queries, if you want
+to use another name, change it in the SQL dump file before importing, and also change it in application/configs/application.ini
+- Start Apache and point your browser to PROJECT_DIR/public/index.php
+- :)
+
+
+
+Thank you for reading this quick intro

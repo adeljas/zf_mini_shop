@@ -1,0 +1,23 @@
+<div class="your_cart">Your Shopping Cart</div>
+<?php $fTotal = 0 ?>
+<?php if (count($this->items) > 0) { ?>
+    <?php foreach ($this->items as $k => $item) { ?>
+        <div class="item_cart">
+            <a class="item_link" href="<?php echo $this->url(array('controller' => 'product', 'action' => 'index', 'id' => $item['id'])) ?>"><?php echo $item['title'] ?></a>
+            <div class="item_image cart_image"><img src="<?php echo $this->baseUrl('images/products/' . $item['first_image']) ?>"/></div>
+            Price: <?php echo $item['price']; $fTotal += $item['price'] ?>&euro; | 
+            <a class="item_link" href="<?php echo $this->url(array('controller' => 'product', 'action' => 'index', 'id' => $item['id'])) ?>">Details</a>
+            |
+            <a class="item_link" href="<?php echo $this->url(array('controller' => 'cart', 'action' => 'remove', 'item_id' => $item['id'])) ?>">Remove from cart</a>
+        </div>
+    <?php } ?>
+    <div class="clear"></div>
+    <div class="cart_total">Total: <?php echo $fTotal ?>&euro;</div>
+    <br/>
+    <div class="add_to_cart"><a href="<?php echo $this->url(array('controller' => 'cart', 'action' => 'empty')) ?>">Empty Cart</a></div>
+
+<?php } else { ?>
+    your cart is empty
+<?php } ?>
+<div><a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index')) ?>">Back to Homepage</a></div>
+<div class="clear"></div>
